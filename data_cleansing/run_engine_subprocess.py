@@ -47,8 +47,6 @@ if __name__ == '__main__':
 
         for p in range(cpu_count):
             process_no = str(p)
-            BT = str(BT)
-            DQ = str(DQ)
             config_database[dnx_config.multiprocessing_collection].insert_one({dnx_config.multiprocessing_p_no: p,
                                                                                dnx_config.multiprocessing_cpu_num_workers: cpu_num_workers,
                                                                                dnx_config.multiprocessing_etl: 1,
@@ -58,8 +56,8 @@ if __name__ == '__main__':
                                                                                dnx_config.multiprocessing_process_alive: 1})
             process_dict[process_no] = subprocess.Popen(['python', 'D:/github/Python/data_cleansing_project/data_cleansing/run_engine.py',
                                                          process_no,
-                                                         BT,
-                                                         DQ,
+                                                         str(BT),
+                                                         str(DQ),
                                                          str(cpu_num_workers)])
 
         count_finished_processes = 0
