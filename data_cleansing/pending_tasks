@@ -1,0 +1,138 @@
+pending tasks:
+==============
+1- prepare & get run engine info from csv files and load it into mongo db:
+	a- business entity attribtes file
+	b- datasource queries' file
+	c- execution plan file
+	d- attribute id and names mapping file
+	e- parameter file
+	f- use  import sys
+            print(sys.getsizeof(OBEJCT_NAME_HERE))
+		
+2- BT:
+	a- validate rowkey -- done
+	b- parallel reset DQ category --
+	c- join with current BT table instead of BT table
+	d- keep only three verions and archive the rest -- no need as well as we will not join on it
+	e- minimum cartegory
+	f- alternative solution for refreshig "BT current" table -- Done
+	g- print logs properly
+	h- handle hash for null value
+	i- run each BE in multi processing
+	j- consider NumPy to replace the the aggregate stage
+	k- consider Map Reduce option in mongoDB
+	l- know how to use batch size
+	m- make CRUD operations in dataframes as possible as it can
+	n- separate getdelta from same data
+	o- modified and expired data in one filter
+	
+2- DQ:
+	a- get "origin user" and "origin business area"
+	b- handle rules' levels
+	c- upgrade category
+	d- truncate result collections before start
+	e- reset cartegory
+	f- data mastering for words -- standarization
+	
+3- IG:
+4- DC:
+
+5- parallel running methods
+
+testing:
+=========
+	1- 7 BEs each has 1m record and 10 columns
+	
+future tasks:
+=============
+	1- KAFKA stream !!
+
+=====================================================
+daily draft:
+BT is loaded with data and add new 190k from source: 0:13:15.627507
+try with new BT 11 and add 190K from source: 0:05:15.472044
+test with 20k records only with same current BT 10
+add index to df
+try load all data once from source 190k to new BT:
+try load all data once from source 190k to loaded BT: 0:07:43.537513, 0:12:34.739169,
+search how to release memory back before running
+--------------------------------------------------------
+
+app inputs:
+===========
+1- stages (per run):
+    a- BT, values 1 or 0
+    b= DQ, values 1 or 0
+
+2- Org_id
+3- BE_id
+4- source_id
+5- source DB:
+    a- url
+    b- schema
+    c- query
+
+6- confuguration DB:
+    a- url
+    b- schema
+
+7- Mongodb conection:
+    a- uri
+    b- db
+
+app work flow:
+==============
+1- define configuration app db
+2- define mongodb connection
+3- define organization
+    a- define business entities:
+        1- BE name
+        2- BE attrinute names
+        3- BE sources:
+            a- url
+            b- schema
+            c- query
+            d- match column names with BE attribute names
+    b- define rules
+    d- setup execution plan
+        1- categories
+            a- levels
+    e- prepare for run
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
