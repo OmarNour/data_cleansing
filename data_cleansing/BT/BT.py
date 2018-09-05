@@ -8,8 +8,7 @@ import sys
 from data_cleansing.dc_methods.dc_methods import insert_into_collection, sha1, get_parameter_values,\
     delete_from_collection_where_ids,get_sub_data,data_to_list, get_start_end_index,chunk_list,df_to_dict, chunk_list_loop, get_minimum_category,\
     assing_process_no
-import dask
-from dask import delayed,compute, dataframe as dd
+from dask import delayed,compute
 from pymongo import IndexModel
 import os
 from dask.diagnostics import ProgressBar
@@ -42,6 +41,9 @@ class StartBt:
     bt_columns = ['bt_id', 'SourceID', 'RowKey', 'AttributeID', 'BTSID', 'AttributeValue', 'RefSID',
                   'HashValue', 'InsertedBy', 'ModifiedBy', 'ValidFrom', 'ValidTo',
                   'IsCurrent', 'ResetDQStage', 'new_row']
+    bt_columns_without_bt_id = ['SourceID', 'RowKey', 'AttributeID', 'BTSID', 'AttributeValue', 'RefSID',
+                                'HashValue', 'InsertedBy', 'ModifiedBy', 'ValidFrom', 'ValidTo',
+                                'IsCurrent', 'ResetDQStage', 'new_row']
 
     def get_data_from_source(self,url,schema, query):
         # print('\n',url,schema)
@@ -117,14 +119,17 @@ class StartBt:
         # print(source_df.columns)
         # print(p_current_df.columns)
         if not current_df.empty:
-
+            source_df = source_df.set_index(['bt_id'])
+            current_df = current_df.set_index(['bt_id'])
             merge_df = source_df.merge(current_df,
                                        left_on=['bt_id'],
                                        right_on=['bt_id'],
                                        suffixes=('_new', '_cbt'),
                                        how='left'
                                        )
+            merge_df = merge_df.reset_index()
 
+            # print(merge_df.columns, merge_df['SourceID_cbt'])
             new_data_df = merge_df.loc[(merge_df['SourceID_cbt'].isnull())]
             new_data_df = new_data_df[['bt_id', 'SourceID_new', 'RowKey_new', 'AttributeID_new', 'BTSID_new',
                                        'AttributeValue_new', 'RefSID_new', 'HashValue_new', 'InsertedBy_new',
