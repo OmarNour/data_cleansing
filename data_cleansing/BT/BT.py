@@ -191,7 +191,7 @@ class StartBt:
         # print('bt_modified_expired', bt_modified_expired.columns)
         # print('expired_ids', expired_ids)
         print('---------- source df', 'p_current_df', 'bt_modified_df, new_data_df:',
-              len(source_df.index), len(p_current_df.index), len(bt_modified_df.index), ',', len(new_data_df.index))
+              len(source_df.index), ',', len(p_current_df.index), ',', len(bt_modified_df.index), ',', len(new_data_df.index))
         return bt_modified_df, bt_expired_data_df, new_data_df, etl_occurred, expired_ids
 
     def load_data(self, p_source_data, p_current_data, bt_collection, bt_current_collection):
