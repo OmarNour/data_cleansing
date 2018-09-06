@@ -114,6 +114,7 @@ class StartBt:
 
     # @delayed
     def get_delta(self, source_df, p_current_df):
+        start_time = datetime.datetime.now()
         etl_occurred = -1
         current_df = p_current_df
         # print(source_df.columns)
@@ -190,8 +191,10 @@ class StartBt:
         # print('$$$$$$$$$$$$$$$$$$$$$$ get_delta End $$$$$$$$$$$$$$$$$$')
         # print('bt_modified_expired', bt_modified_expired.columns)
         # print('expired_ids', expired_ids)
+        end_time = datetime.datetime.now()
         print('---------- source df', 'p_current_df', 'bt_modified_df, new_data_df:',
-              len(source_df.index), ',', len(p_current_df.index), ',', len(bt_modified_df.index), ',', len(new_data_df.index))
+              len(source_df.index), ',', len(p_current_df.index), ',', len(bt_modified_df.index), ',', len(new_data_df.index),
+              'time elapsed:', end_time - start_time)
         return bt_modified_df, bt_expired_data_df, new_data_df, etl_occurred, expired_ids
 
     def load_data(self, p_source_data, p_current_data, bt_collection, bt_current_collection):
