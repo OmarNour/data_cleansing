@@ -7,9 +7,10 @@ import data_cleansing.CONFIG.Config as DNXConfig
 import datetime
 import math
 
+
 if __name__ == '__main__':
     build_config_db()
-    process_dict = {}
+    bt_process_dict = {}
     dnx_config = DNXConfig.Config()
     client = pymongo.MongoClient(dnx_config.mongo_uri)
     config_database = client[dnx_config.config_db_name]
@@ -33,7 +34,9 @@ if __name__ == '__main__':
         BT = i['BT']
         DQ = i['DQ']
         if BT == 1:
-            loading_source_data = subprocess.Popen(['python', 'D:/github/Python/data_cleansing_project/data_cleansing/load_source_data/load_source_data.py', str(cpu_count)])
+            loading_source_data = subprocess.Popen(['python',
+                                                    'D:/github/Python/data_cleansing_project/data_cleansing/load_source_data/load_source_data.py',
+                                                    str(cpu_count)])
 
             while loading_source_data.poll() is None:
                 None
@@ -54,11 +57,12 @@ if __name__ == '__main__':
                                                                                dnx_config.multiprocessing_bt_current_inserts: 1,
                                                                                dnx_config.multiprocessing_bt_current_deletes: 1,
                                                                                dnx_config.multiprocessing_process_alive: 1})
-            process_dict[process_no] = subprocess.Popen(['python', 'D:/github/Python/data_cleansing_project/data_cleansing/run_engine.py',
-                                                         process_no,
-                                                         str(BT),
-                                                         str(DQ),
-                                                         str(cpu_num_workers)])
+            bt_process_dict[process_no] = subprocess.Popen(['python',
+                                                            'D:/github/Python/data_cleansing_project/data_cleansing/run_engine.py',
+                                                            process_no,
+                                                            str(BT),
+                                                            str(DQ),
+                                                            str(cpu_num_workers)])
 
         count_finished_processes = 0
         process_list = []
@@ -67,7 +71,7 @@ if __name__ == '__main__':
 
         while process_list:
             for p_no in range(cpu_count):
-                if process_dict[str(p_no)].poll() is not None:
+                if bt_process_dict[str(p_no)].poll() is not None:
                     try:
                         process_list.remove(p_no)
                         count_finished_processes += 1
