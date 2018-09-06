@@ -1,6 +1,6 @@
 
 	Engine database: Mongodb 4.0
-	Essanitial libraries:
+	Essential libraries:
 		pymongo 	3.7.1
 		dask		0.19.0
 		sqlAlchemy	1.2.11
