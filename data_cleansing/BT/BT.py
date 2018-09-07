@@ -170,27 +170,13 @@ class StartBt:
             new_data_df = source_df
             expired_ids = []
 
-        # sort_by = ['_id', 'SourceID', 'ResetDQStage', 'AttributeID', 'RowKey']
         if len(bt_modified_df.index) > 0 and len(new_data_df.index) > 0:
-            # new_data_df = new_data_df.sort_values(by=sort_by, kind='mergesort')
-            # bt_modified_df = bt_modified_df.sort_values(by=sort_by, kind='mergesort')
             etl_occurred = 2
         elif len(new_data_df.index) > 0:
-            # new_data_df = new_data_df.sort_values(by=sort_by, kind='mergesort')
             etl_occurred = 1
         elif len(bt_modified_df.index) > 0:
-            # bt_modified_df = bt_modified_df.sort_values(by=sort_by, kind='mergesort')
             etl_occurred = 0
-        # print('---------- bt_modified_df', len(bt_modified_df.index))
-        # print('---------- bt_expired_data_df', len(bt_expired_data_df.index))
-        # print('---------- bt_same_data_df', len(bt_same_data_df.index))
-        # print('---------- new_data_df', len(new_data_df.index))
-        # print('---------- current_df', len(current_df.index))
 
-        # print('get_delta time:',datetime.datetime.now() - merge_time)
-        # print('$$$$$$$$$$$$$$$$$$$$$$ get_delta End $$$$$$$$$$$$$$$$$$')
-        # print('bt_modified_expired', bt_modified_expired.columns)
-        # print('expired_ids', expired_ids)
         end_time = datetime.datetime.now()
         print('---------- source df', 'p_current_df', 'bt_modified_df, new_data_df:',
               len(source_df.index), ',', len(p_current_df.index), ',', len(bt_modified_df.index), ',', len(new_data_df.index),
@@ -450,19 +436,12 @@ class StartBt:
             bt_current_collection = config_database[self.dnx_config.org_business_entities_collection].find_one({'_id': be_id})['bt_current_collection']
             bt_collection = config_database[self.dnx_config.org_business_entities_collection].find_one({'_id': be_id})['bt_collection']
             source_collection = config_database[self.dnx_config.org_business_entities_collection].find_one({'_id': be_id})['source_collection']
-            # org_id = config_database[self.dnx_config.org_business_entities_collection].find_one({'_id': be_id})['org_id']
 
-            # self.create_bt_indexes(bt_current_collection, bt_collection)
-
-            be_source_ids = config_database[self.dnx_config.be_data_sources_collection].find({'be_id': be_id, 'active': 1, '_id': {'$in': mapping_be_source_ids}}).distinct('_id')
+            be_source_ids = config_database[self.dnx_config.be_data_sources_collection].find({'be_id': be_id,
+                                                                                              'active': 1,
+                                                                                              '_id': {'$in': mapping_be_source_ids}}).distinct('_id')
             # be_source_ids.sort()
             for source_id in be_source_ids:
-                # query = config_database[self.dnx_config.be_data_sources_collection].find_one({'_id': source_id})['query']
-                # org_source_id = config_database[self.dnx_config.be_data_sources_collection].find_one({'_id': source_id})['org_connection_id']
-
-                # source_url = config_database[self.dnx_config.org_connections_collection].find_one({'_id': org_source_id, 'org_id': org_id})['url']
-                # source_schema = config_database[self.dnx_config.org_connections_collection].find_one({'_id': org_source_id, 'org_id': org_id})['schema']
-
                 self.etl_be(source_id, bt_current_collection,bt_collection, source_collection, process_no)
 
 
