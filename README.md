@@ -13,7 +13,7 @@
 		4- define organization source connections
 		5- define business entity attributs
 		6- define business entity sources
-		7- mapping
+		7- do mapping between source query columns and business entity attributes
 		8- define execution plan
 	workflow:
 		1- extract data from source system
@@ -23,6 +23,8 @@
 		5- extract difference 
 		6- move old data to archive table
 		7- push new/changed data to current active table
-		8- apply rules on each data value based on pre configred execution plane
+		8- apply rules on each data value based on the pre-configred execution plane
 		9- generate result in new table with data quality issues for each business entities
+		
+	Most of the operation above works in parallel using Dask.
 
