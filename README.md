@@ -26,5 +26,5 @@
 		8- apply rules on each data value based on the pre-configred execution plane
 		9- generate result in new table with data quality issues for each business entities
 		
-	Most of the operation above works in parallel using Dask.
+	Most of the operations above works in parallel using Dask.
 
