@@ -1,10 +1,11 @@
+import sys
 import data_cleansing.CONFIG.Config as DNXConfig
 import datetime
 from sqlalchemy import create_engine
 import pandas as pd
 import pymongo
 import numpy as np
-import sys
+
 from data_cleansing.dc_methods.dc_methods import insert_into_collection, sha1, get_parameter_values,\
     delete_from_collection_where_ids,get_sub_data,data_to_list, get_start_end_index,chunk_list,df_to_dict, chunk_list_loop, get_minimum_category,\
     assing_process_no

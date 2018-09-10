@@ -1,5 +1,6 @@
-from data_cleansing.BT.BT import StartBt
 import sys
+sys.path.append('D:\github\Python\data_cleansing_project')
+from data_cleansing.BT.BT import StartBt
 
 if __name__ == '__main__':
     try:

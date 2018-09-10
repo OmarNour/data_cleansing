@@ -1,3 +1,5 @@
+import sys
+sys.path.append('D:\github\Python\data_cleansing_project')
 import datetime
 import data_cleansing.CONFIG.Config as DNXConfig
 from data_cleansing.build_configuration_schema.config_schema import build_config_db
@@ -7,7 +9,7 @@ from multiprocessing import Process
 import pymongo
 import pandas as pd
 # import xlrd
-import sys
+
 
 if __name__ == '__main__':
     ############################ parameters ################################

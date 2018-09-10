@@ -1,6 +1,7 @@
+import sys
+sys.path.append('D:\github\Python\data_cleansing_project')
 import subprocess
 import multiprocessing
-from data_cleansing.BT.BT import StartBt
 from data_cleansing.build_configuration_schema.config_schema import build_config_db
 import pymongo
 import data_cleansing.CONFIG.Config as DNXConfig
