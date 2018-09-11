@@ -371,13 +371,21 @@ class StartBt:
             # compute(*self.parallel_data_manipulation)
             self.parallel_data_manipulation = []
 
-        if self.parallel_bt_current_inserts:
-            print('Process_no:', process_no, 'Executing', len(self.parallel_bt_current_inserts),
-                  'parallel inserts into:', bt_current_collection)
-            compute(*self.parallel_bt_current_inserts, num_workers=self.get_cpu_num_workers(process_no))
-            # compute(*self.parallel_bt_current_inserts)
-            self.parallel_bt_current_inserts = []
-        self.maintain_multiprocessing_collection(process_no, self.dnx_config.multiprocessing_bt_current_inserts)
+        if self.parallel_prepare_chunks_delete:
+            compute(*self.parallel_prepare_chunks_delete, num_workers=self.get_cpu_num_workers(process_no))
+            # compute(*self.parallel_prepare_chunks_delete)
+            self.parallel_prepare_chunks_delete = []
+
+            if self.parallel_deletes:
+                while not self.all_etls_processes_done:
+                    self.maintain_multiprocessing_collection(None, self.dnx_config.multiprocessing_etl)
+
+                print('Process_no:', process_no, 'Executing', len(self.parallel_deletes),
+                      'parallel deletes from:', bt_current_collection)
+                compute(*self.parallel_deletes, num_workers=self.get_cpu_num_workers(process_no))
+                # compute(*self.parallel_deletes)
+                self.parallel_deletes = []
+        self.maintain_multiprocessing_collection(process_no, self.dnx_config.multiprocessing_bt_current_deletes)
 
         if self.parallel_bt_inserts:
             print('Process_no:', process_no, 'Executing', len(self.parallel_bt_inserts),
@@ -387,22 +395,18 @@ class StartBt:
             self.parallel_bt_inserts = []
         self.maintain_multiprocessing_collection(process_no, self.dnx_config.multiprocessing_bt_inserts)
 
-        if self.parallel_prepare_chunks_delete:
-            compute(*self.parallel_prepare_chunks_delete, num_workers=self.get_cpu_num_workers(process_no))
-            # compute(*self.parallel_prepare_chunks_delete)
-            self.parallel_prepare_chunks_delete = []
+        if self.parallel_bt_current_inserts:
+            while not self.all_bt_current_deletes_processes_done:
+                self.maintain_multiprocessing_collection(None, self.dnx_config.multiprocessing_bt_current_deletes)
+
+            print('Process_no:', process_no, 'Executing', len(self.parallel_bt_current_inserts),
+                  'parallel inserts into:', bt_current_collection)
+            compute(*self.parallel_bt_current_inserts, num_workers=self.get_cpu_num_workers(process_no))
+            # compute(*self.parallel_bt_current_inserts)
+            self.parallel_bt_current_inserts = []
+        self.maintain_multiprocessing_collection(process_no, self.dnx_config.multiprocessing_bt_current_inserts)
 
         # print('self.all_bt_current_inserts_processes_done', self.all_bt_current_inserts_processes_done)
-        while not self.all_bt_current_inserts_processes_done:
-            self.maintain_multiprocessing_collection(None, self.dnx_config.multiprocessing_bt_current_inserts)
-
-        if self.parallel_deletes:
-            print('Process_no:', process_no, 'Executing', len(self.parallel_deletes),
-                  'parallel deletes from:', bt_current_collection)
-            compute(*self.parallel_deletes, num_workers=self.get_cpu_num_workers(process_no))
-            # compute(*self.parallel_deletes)
-            self.parallel_deletes = []
-        self.maintain_multiprocessing_collection(process_no, self.dnx_config.multiprocessing_bt_current_deletes)
 
     def create_bt_indexes(self, bt_current_collection,bt_collection):
         print('start create indexes for', bt_current_collection)

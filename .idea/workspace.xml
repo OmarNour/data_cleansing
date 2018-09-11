@@ -4,9 +4,32 @@
     <list default="true" id="ffcc62b3-e40f-4fb2-a5fb-9d7b6a035b74" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_cleansing/BT/BT.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_cleansing/BT/BT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_cleansing/load_source_data/load_source_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_cleansing/load_source_data/load_source_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_cleansing/run_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_cleansing/run_engine.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_cleansing/run_engine_subprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_cleansing/run_engine_subprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask-0.19.0.dist-info/INSTALLER" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask-0.19.0.dist-info/METADATA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask-0.19.0.dist-info/RECORD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask-0.19.0.dist-info/WHEEL" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask-0.19.0.dist-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/_version.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/_version.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/core.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/creation.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/creation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/linalg.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/linalg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/reductions.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/reductions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/slicing.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/slicing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/tests/test_array_core.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/tests/test_array_core.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/tests/test_linalg.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/tests/test_linalg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/tests/test_optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/tests/test_optimization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/tests/test_reductions.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/tests/test_reductions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/categorical.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/categorical.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/core.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/io/parquet.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/io/parquet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/io/tests/test_parquet.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/io/tests/test_parquet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/partitionquantiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/partitionquantiles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/shuffle.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/shuffle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/tests/test_categorical.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/tests/test_categorical.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/tests/test_dataframe.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/tests/test_dataframe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/tests/test_multi.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/tests/test_multi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/tests/test_shuffle.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/tests/test_shuffle.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,13 +38,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/data_cleansing_project$run_engine_subprocess.coverage" NAME="run_engine_subprocess Coverage Results" MODIFIED="1536575428780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_cleansing" />
+    <SUITE FILE_PATH="coverage/data_cleansing_project$run_engine_subprocess.coverage" NAME="run_engine_subprocess Coverage Results" MODIFIED="1536665983319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_cleansing" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1187655381">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.113" value="1" />
@@ -30,36 +53,38 @@
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.36" value="1" />
+          <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.63" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="md" value="1" />
-          <entry key="py" value="15" />
-          <entry key="txt" value="3" />
+          <entry key="py" value="19" />
+          <entry key="txt" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="15" />
+          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="Python" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="161" />
-          <entry key="txt" value="208" />
+          <entry key="py" value="217" />
+          <entry key="txt" value="213" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="208" />
-          <entry key="Python" value="161" />
+          <entry key="PLAIN_TEXT" value="213" />
+          <entry key="Python" value="217" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -70,8 +95,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_cleansing/run_engine_subprocess.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="1" selection-end-column="58" />
+            <state relative-caret-position="21">
+              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -79,28 +104,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data_cleansing/BT/BT.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="48" lean-forward="true" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_cleansing/run_engine.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="1" column="58" selection-start-line="1" selection-start-column="58" selection-end-line="1" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_cleansing/load_source_data/load_source_data.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="-441">
+              <caret line="368" column="20" selection-start-line="368" selection-start-column="20" selection-end-line="368" selection-end-column="20" />
               <folding>
-                <element signature="e#0#40#0" expanded="true" />
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,10 +128,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/data_cleansing/requirements.txt" />
-        <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/data_cleansing/run_engine_subprocess.py" />
-        <option value="$PROJECT_DIR$/data_cleansing/load_source_data/load_source_data.py" />
         <option value="$PROJECT_DIR$/data_cleansing/run_engine.py" />
+        <option value="$PROJECT_DIR$/data_cleansing/load_source_data/load_source_data.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/data_cleansing/BT/BT.py" />
       </list>
     </option>
@@ -135,7 +142,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-11" />
     <option name="width" value="1378" />
     <option name="height" value="754" />
@@ -156,6 +163,12 @@
               <item name="data_cleansing_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="data_cleansing_project" type="462c0819:PsiDirectoryNode" />
               <item name="data_cleansing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data_cleansing_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data_cleansing_project" type="462c0819:PsiDirectoryNode" />
+              <item name="data_cleansing" type="462c0819:PsiDirectoryNode" />
+              <item name="BT" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="data_cleansing_project" type="b2602c69:ProjectViewProjectNode" />
@@ -321,18 +334,26 @@
       <option name="project" value="LOCAL" />
       <updated>1536487114235</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="add sys.path.append">
+      <created>1536576109530</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1536576109530</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.204236" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.20726173" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.52921534" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.47078463" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5275459" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -350,12 +371,12 @@
       <window_info anchor="right" id="Database" order="4" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.204236" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.20726173" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32220367" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.47078463" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5275459" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -364,7 +385,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32888147" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32888147" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2888147" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.2888147" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.4624374" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -389,14 +410,15 @@
     <MESSAGE value="rename dict" />
     <MESSAGE value="remove some hashed code" />
     <MESSAGE value="update readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="update readme" />
+    <MESSAGE value="add sys.path.append" />
+    <option name="LAST_COMMIT_MESSAGE" value="add sys.path.append" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/data_cleansing/BT/BT.py</url>
-          <line>189</line>
+          <line>188</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
@@ -416,20 +438,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="281" selection-start-line="281" selection-end-line="281" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_cleansing/dc_methods/dc_methods.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2142">
-          <caret line="102" selection-start-line="102" selection-end-line="102" />
         </state>
       </provider>
     </entry>
@@ -453,18 +461,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data_cleansing/load_source_data/load_source_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_cleansing/run_engine_subprocess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" selection-end-column="58" />
+        <state relative-caret-position="63">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
@@ -475,10 +473,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_cleansing/dc_methods/dc_methods.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_cleansing/run_engine_subprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data_cleansing/BT/BT.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="48" lean-forward="true" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+        <state relative-caret-position="-441">
+          <caret line="368" column="20" selection-start-line="368" selection-start-column="20" selection-end-line="368" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
