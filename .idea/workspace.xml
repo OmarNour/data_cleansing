@@ -3,33 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ffcc62b3-e40f-4fb2-a5fb-9d7b6a035b74" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_cleansing/BT/BT.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_cleansing/BT/BT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask-0.19.0.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask-0.19.0.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask-0.19.0.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask-0.19.0.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask-0.19.0.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/_version.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/_version.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/core.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/creation.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/creation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/linalg.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/linalg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/reductions.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/reductions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/slicing.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/slicing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/tests/test_array_core.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/tests/test_array_core.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/tests/test_linalg.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/tests/test_linalg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/tests/test_optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/tests/test_optimization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/tests/test_reductions.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/array/tests/test_reductions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/categorical.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/categorical.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/core.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/io/parquet.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/io/parquet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/io/tests/test_parquet.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/io/tests/test_parquet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/partitionquantiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/partitionquantiles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/shuffle.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/shuffle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/tests/test_categorical.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/tests/test_categorical.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/tests/test_dataframe.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/tests/test_dataframe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/tests/test_multi.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/tests/test_multi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/tests/test_shuffle.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/dask/dataframe/tests/test_shuffle.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,12 +51,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="py" value="217" />
-          <entry key="txt" value="213" />
+          <entry key="txt" value="307" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="213" />
+          <entry key="PLAIN_TEXT" value="307" />
           <entry key="Python" value="217" />
         </counts>
       </usages-collector>
@@ -142,7 +115,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-11" />
     <option name="width" value="1378" />
     <option name="height" value="754" />
@@ -341,12 +314,18 @@
       <option name="project" value="LOCAL" />
       <updated>1536576109530</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="update Dask &#10;perform delete operation before inserting into bt_current">
+      <created>1536667523169</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1536667523169</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.20726173" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -362,7 +341,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32888147" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32888147" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.2888147" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2888147" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.4624374" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -411,7 +390,8 @@
     <MESSAGE value="remove some hashed code" />
     <MESSAGE value="update readme" />
     <MESSAGE value="add sys.path.append" />
-    <option name="LAST_COMMIT_MESSAGE" value="add sys.path.append" />
+    <MESSAGE value="update Dask &#10;perform delete operation before inserting into bt_current" />
+    <option name="LAST_COMMIT_MESSAGE" value="update Dask &#10;perform delete operation before inserting into bt_current" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
