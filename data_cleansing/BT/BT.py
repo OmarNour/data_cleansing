@@ -7,8 +7,8 @@ import pymongo
 import numpy as np
 
 from data_cleansing.dc_methods.dc_methods import insert_into_collection, sha1, get_parameter_values,\
-    delete_from_collection_where_ids,get_sub_data,data_to_list, get_start_end_index,chunk_list,df_to_dict, chunk_list_loop, get_minimum_category,\
-    assing_process_no
+    delete_from_collection_where_ids,get_sub_data,data_to_list, get_start_end_index,chunk_list,df_to_dict, chunk_list_loop, get_minimum_category, \
+    assign_process_no
 from dask import delayed,compute
 from pymongo import IndexModel
 import os
@@ -238,7 +238,7 @@ class StartBt:
         partial_results_df = pd.DataFrame(partial_results, columns=partial_results_keys)
         partial_results_df[row_key_column_name] = partial_results_df[row_key_column_name].apply(sha1)
         partial_results_df['_id'] = partial_results_df[row_key_column_name]
-        partial_results_df[process_no_column_name] = partial_results_df.apply(lambda x: assing_process_no(no_of_cores, x.name), axis=1)
+        partial_results_df[process_no_column_name] = partial_results_df.apply(lambda x: assign_process_no(no_of_cores, x.name), axis=1)
         return partial_results_df
 
     def load_source_data(self, no_of_cores=1):

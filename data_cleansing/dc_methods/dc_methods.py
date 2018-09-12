@@ -17,7 +17,7 @@ def sha1(value):
     return str(hex_dig)
 
 
-def assing_process_no(no_of_cores, index):
+def assign_process_no(no_of_cores, index):
     process_no = index % no_of_cores
     # print(process_no)
     return process_no
@@ -89,6 +89,13 @@ def chunk_list(list_data,chunk_size):
     chunks = (list_data[x:x + chunk_size] for x in
               range(0, len(list_data), chunk_size))
     return chunks
+
+
+def integer_rep(string):
+    string_int = [ord(c) for c in string]
+    string_int = "".join(str(n) for n in string_int)
+    string_int = int(string_int)
+    return string_int
 
 
 def chunk_list_loop(list_data,chunk_size):
