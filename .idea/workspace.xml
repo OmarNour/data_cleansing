@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ffcc62b3-e40f-4fb2-a5fb-9d7b6a035b74" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_cleansing/BT/BT.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_cleansing/BT/BT.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,13 +12,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/data_cleansing_project$run_engine_subprocess.coverage" NAME="run_engine_subprocess Coverage Results" MODIFIED="1536665983319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_cleansing" />
+    <SUITE FILE_PATH="coverage/data_cleansing_project$run_engine_subprocess.coverage" NAME="run_engine_subprocess Coverage Results" MODIFIED="1536761620489" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_cleansing" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1187655381">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
+          <entry key="project.closed" value="16" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.113" value="1" />
@@ -25,39 +26,45 @@
           <entry key="project.open.time.139" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.32" value="1" />
           <entry key="project.open.time.36" value="1" />
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.39" value="1" />
+          <entry key="project.open.time.49" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.63" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.open.time.80" value="1" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="md" value="1" />
-          <entry key="py" value="19" />
+          <entry key="md" value="2" />
+          <entry key="py" value="25" />
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Markdown" value="1" />
+          <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Python" value="19" />
+          <entry key="Python" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="217" />
-          <entry key="txt" value="307" />
+          <entry key="Python Console" value="62" />
+          <entry key="md" value="4" />
+          <entry key="py" value="900" />
+          <entry key="txt" value="320" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="307" />
-          <entry key="Python" value="217" />
+          <entry key="Markdown" value="4" />
+          <entry key="PLAIN_TEXT" value="320" />
+          <entry key="Python" value="962" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -68,8 +75,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_cleansing/run_engine_subprocess.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+            <state relative-caret-position="1029">
+              <caret line="49" column="41" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -77,11 +84,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data_cleansing/BT/BT.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-441">
-              <caret line="368" column="20" selection-start-line="368" selection-start-column="20" selection-end-line="368" selection-end-column="20" />
+            <state relative-caret-position="-473">
+              <caret line="364" column="83" lean-forward="true" selection-start-line="364" selection-start-column="83" selection-end-line="364" selection-end-column="83" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_cleansing/dc_methods/dc_methods.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="318">
+              <caret line="93" column="19" selection-start-line="93" selection-start-column="4" selection-end-line="93" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -92,6 +108,11 @@
     <findStrings>
       <find>SourceID_cbt</find>
       <find>StartBt</find>
+      <find>total_source_rows</find>
+      <find>get_cpu_num_workers</find>
+      <find>parallel ETLs for: BT_current_4383_10</find>
+      <find>data_to_list</find>
+      <find>parallel deletes</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -105,6 +126,8 @@
         <option value="$PROJECT_DIR$/data_cleansing/run_engine.py" />
         <option value="$PROJECT_DIR$/data_cleansing/load_source_data/load_source_data.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/data_cleansing/dc_methods/dc_methods.py" />
         <option value="$PROJECT_DIR$/data_cleansing/BT/BT.py" />
       </list>
     </option>
@@ -142,6 +165,12 @@
               <item name="data_cleansing_project" type="462c0819:PsiDirectoryNode" />
               <item name="data_cleansing" type="462c0819:PsiDirectoryNode" />
               <item name="BT" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="data_cleansing_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data_cleansing_project" type="462c0819:PsiDirectoryNode" />
+              <item name="data_cleansing" type="462c0819:PsiDirectoryNode" />
+              <item name="dc_methods" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="data_cleansing_project" type="b2602c69:ProjectViewProjectNode" />
@@ -321,18 +350,25 @@
       <option name="project" value="LOCAL" />
       <updated>1536667523169</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="update readme">
+      <created>1536667742886</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1536667742886</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.20726173" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.21028744" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.47078463" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.54924875" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5275459" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -341,7 +377,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32888147" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32888147" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2888147" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.2888147" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.4624374" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -350,12 +386,12 @@
       <window_info anchor="right" id="Database" order="4" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.20726173" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.21028744" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.47078463" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.54924875" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5275459" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -388,10 +424,10 @@
     <MESSAGE value="configuration database changed" />
     <MESSAGE value="rename dict" />
     <MESSAGE value="remove some hashed code" />
-    <MESSAGE value="update readme" />
     <MESSAGE value="add sys.path.append" />
     <MESSAGE value="update Dask &#10;perform delete operation before inserting into bt_current" />
-    <option name="LAST_COMMIT_MESSAGE" value="update Dask &#10;perform delete operation before inserting into bt_current" />
+    <MESSAGE value="update readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="update readme" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -418,14 +454,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="281" selection-start-line="281" selection-end-line="281" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -460,24 +488,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_cleansing/dc_methods/dc_methods.py">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="126">
+            <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pymongo/cursor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        <state relative-caret-position="24318">
+          <caret line="1188" column="13" selection-start-line="1188" selection-start-column="13" selection-end-line="1188" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pymongo/helpers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="154" selection-start-line="154" selection-end-line="154" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data_cleansing/run_engine_subprocess.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        <state relative-caret-position="1029">
+          <caret line="49" column="41" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_cleansing/dc_methods/dc_methods.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="93" column="19" selection-start-line="93" selection-start-column="4" selection-end-line="93" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data_cleansing/BT/BT.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-441">
-          <caret line="368" column="20" selection-start-line="368" selection-start-column="20" selection-end-line="368" selection-end-column="20" />
+        <state relative-caret-position="-473">
+          <caret line="364" column="83" lean-forward="true" selection-start-line="364" selection-start-column="83" selection-end-line="364" selection-end-column="83" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>

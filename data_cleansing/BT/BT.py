@@ -92,7 +92,7 @@ class StartBt:
         att_ids_df['ResetDQStage'] = att_ids_df.apply(lambda row: get_minimum_category(row['be_att_id']), axis=1)
         att_ids_df = att_ids_df.rename(index=str, columns={"query_column_name": "AttributeName", "be_att_id": "AttributeID"})
         # print(att_ids_df)
-        return att_ids_df
+        return att_ids_df, len(att_ids_df)
 
     # @delayed
     def attach_attribute_id(self, att_query_df, melt_df):
@@ -294,7 +294,9 @@ class StartBt:
         source_database = client[self.dnx_config.src_db_name]
         collection_filter = {'process_no': process_no}
         count_rows = source_database[source_collection].find(collection_filter).count()
-        att_query_df = self.get_att_ids_df(source_id)
+        get_att_ids_df_result = self.get_att_ids_df(source_id)
+        att_query_df = get_att_ids_df_result[0]
+        no_of_attributes = get_att_ids_df_result[1]
         collection_project = {'_id': 0}
         # print('count_rows', count_rows)
         # print('collection_filter', collection_filter)
@@ -306,16 +308,19 @@ class StartBt:
             sub_source_data_df = delayed(pd.DataFrame)(list_sub_source_data)
             melt_sub_source_data_df = delayed(self.melt_query_result)(sub_source_data_df, source_id)
             source_data_df = delayed(self.attach_attribute_id)(att_query_df, melt_sub_source_data_df)
-            yield source_data_df[0], source_data_df[1]
+            yield source_data_df[0], source_data_df[1], (i[1] - i[0]), count_rows
 
     def get_expired_ids(self, sorce_df):
         expired_ids = sorce_df['_id']
         return expired_ids
 
-    def get_cpu_num_workers(self, process_no):
-        client = pymongo.MongoClient(self.dnx_config.mongo_uri)
-        config_db = client[self.dnx_config.config_db_name]
-        cpu_num_workers = config_db[self.dnx_config.multiprocessing_collection].find_one({'p_no': process_no})['cpu_num_workers']
+    def get_cpu_num_workers(self, process_no, p_cpu_num_workers):
+        try:
+            client = pymongo.MongoClient(self.dnx_config.mongo_uri)
+            config_db = client[self.dnx_config.config_db_name]
+            cpu_num_workers = config_db[self.dnx_config.multiprocessing_collection].find_one({'p_no': process_no})['cpu_num_workers']
+        except:
+            cpu_num_workers = p_cpu_num_workers
         return cpu_num_workers
 
     def maintain_multiprocessing_collection(self, process_no, parallel_process_name):
@@ -340,8 +345,32 @@ class StartBt:
                 elif parallel_process_name == self.dnx_config.multiprocessing_bt_current_deletes:
                     self.all_bt_current_deletes_processes_done = True
 
-    def etl_be(self, source_id, bt_current_collection, bt_collection, source_collection, process_no):
-        for source_data_df, ids in self.get_source_data(source_id, source_collection, process_no):
+    def etl_be(self, source_id, bt_current_collection, bt_collection, source_collection, process_no, cpu_num_workers):
+        max_to_compute = int(self.parameters_dict['max_source_rows_to_compute_parallel']) #200000
+        # current_source_rows = 0
+        # run_compute = False
+        # first_iterate_len = 0
+        # last_iteration = False
+        compute_every = 0
+        for i, get_source_result in enumerate(self.get_source_data(source_id, source_collection, process_no)):
+            source_data_df, ids, len_ids, total_source_rows = get_source_result[0], get_source_result[1], get_source_result[2], get_source_result[3]
+            # current_source_rows += len_ids
+
+            # if total_source_rows <= first_iterate_len:
+            #     last_iteration = True
+
+            if i == 0:
+
+                compute_every = max(round(max_to_compute/len_ids), 1)
+                print(process_no, len_ids, total_source_rows, max_to_compute, compute_every)
+            #     first_iterate_len = current_source_rows
+            #     if current_source_rows >= max_to_compute or last_iteration:
+            #         run_compute = True
+            # else:
+            #     if current_source_rows < first_iterate_len:
+            #         last_iteration = True
+            #     if current_source_rows >= max_to_compute or last_iteration:
+            #         run_compute = True
 
             collection_filter = {'bt_id': {'$in': ids}}
             # collection_projection = {'_id': 0}
@@ -354,59 +383,54 @@ class StartBt:
             etl_delayed = delayed(self.load_data)(source_data_df, bt_current_data_df,
                                                   bt_collection,
                                                   bt_current_collection)
-
             self.parallel_etls.append(etl_delayed)
 
-        print('-----------------------------------------------------------')
+        print('------------------------- start parralel computing ----------------------------------')
         # org_id_be_id = str(org_id)+'_'+str(be_id)
         if self.parallel_etls:
-            print('Process_no:', process_no, 'Executing', len(self.parallel_etls),
-                  'parallel ETLs for:', bt_current_collection)
-            compute(*self.parallel_etls, num_workers=self.get_cpu_num_workers(process_no))
             # compute(*self.parallel_etls)
+            for i in chunk_list_loop(self.parallel_etls, compute_every):
+                print('Process_no:', process_no, 'Executing', len(i),
+                      'parallel ETLs for:', bt_current_collection)
+                compute(*i, num_workers=self.get_cpu_num_workers(process_no, cpu_num_workers))
+
+                if self.parallel_data_manipulation:
+                    compute(*self.parallel_data_manipulation, num_workers=self.get_cpu_num_workers(process_no, cpu_num_workers))
+                    self.parallel_data_manipulation = []
+
+                if self.parallel_prepare_chunks_delete:
+                    compute(*self.parallel_prepare_chunks_delete, num_workers=self.get_cpu_num_workers(process_no, cpu_num_workers))
+                    self.parallel_prepare_chunks_delete = []
+
+                    if self.parallel_deletes:
+                        # while not self.all_etls_processes_done:
+                        #     self.maintain_multiprocessing_collection(None, self.dnx_config.multiprocessing_etl)
+
+                        print('Process_no:', process_no, 'Executing', len(self.parallel_deletes),
+                              'parallel deletes from:', bt_current_collection)
+                        compute(*self.parallel_deletes, num_workers=self.get_cpu_num_workers(process_no, cpu_num_workers))
+                        self.parallel_deletes = []
+                self.maintain_multiprocessing_collection(process_no, self.dnx_config.multiprocessing_bt_current_deletes)
+
+                if self.parallel_bt_inserts:
+                    print('Process_no:', process_no, 'Executing', len(self.parallel_bt_inserts),
+                          'parallel inserts into:', bt_collection)
+                    compute(*self.parallel_bt_inserts, num_workers=self.get_cpu_num_workers(process_no, cpu_num_workers))
+                    self.parallel_bt_inserts = []
+                self.maintain_multiprocessing_collection(process_no, self.dnx_config.multiprocessing_bt_inserts)
+
+                if self.parallel_bt_current_inserts:
+                    # while not self.all_bt_current_deletes_processes_done:
+                    #     self.maintain_multiprocessing_collection(None, self.dnx_config.multiprocessing_bt_current_deletes)
+
+                    print('Process_no:', process_no, 'Executing', len(self.parallel_bt_current_inserts),
+                          'parallel inserts into:', bt_current_collection)
+                    compute(*self.parallel_bt_current_inserts, num_workers=self.get_cpu_num_workers(process_no, cpu_num_workers))
+                    self.parallel_bt_current_inserts = []
+                self.maintain_multiprocessing_collection(process_no, self.dnx_config.multiprocessing_bt_current_inserts)
         self.maintain_multiprocessing_collection(process_no, self.dnx_config.multiprocessing_etl)
 
-        if self.parallel_data_manipulation:
-            compute(*self.parallel_data_manipulation, num_workers=self.get_cpu_num_workers(process_no))
-            # compute(*self.parallel_data_manipulation)
-            self.parallel_data_manipulation = []
-
-        if self.parallel_prepare_chunks_delete:
-            compute(*self.parallel_prepare_chunks_delete, num_workers=self.get_cpu_num_workers(process_no))
-            # compute(*self.parallel_prepare_chunks_delete)
-            self.parallel_prepare_chunks_delete = []
-
-            if self.parallel_deletes:
-                while not self.all_etls_processes_done:
-                    self.maintain_multiprocessing_collection(None, self.dnx_config.multiprocessing_etl)
-
-                print('Process_no:', process_no, 'Executing', len(self.parallel_deletes),
-                      'parallel deletes from:', bt_current_collection)
-                compute(*self.parallel_deletes, num_workers=self.get_cpu_num_workers(process_no))
-                # compute(*self.parallel_deletes)
-                self.parallel_deletes = []
-        self.maintain_multiprocessing_collection(process_no, self.dnx_config.multiprocessing_bt_current_deletes)
-
-        if self.parallel_bt_inserts:
-            print('Process_no:', process_no, 'Executing', len(self.parallel_bt_inserts),
-                  'parallel inserts into:', bt_collection)
-            compute(*self.parallel_bt_inserts, num_workers=self.get_cpu_num_workers(process_no))
-            # compute(*self.parallel_bt_inserts)
-            self.parallel_bt_inserts = []
-        self.maintain_multiprocessing_collection(process_no, self.dnx_config.multiprocessing_bt_inserts)
-
-        if self.parallel_bt_current_inserts:
-            while not self.all_bt_current_deletes_processes_done:
-                self.maintain_multiprocessing_collection(None, self.dnx_config.multiprocessing_bt_current_deletes)
-
-            print('Process_no:', process_no, 'Executing', len(self.parallel_bt_current_inserts),
-                  'parallel inserts into:', bt_current_collection)
-            compute(*self.parallel_bt_current_inserts, num_workers=self.get_cpu_num_workers(process_no))
-            # compute(*self.parallel_bt_current_inserts)
-            self.parallel_bt_current_inserts = []
-        self.maintain_multiprocessing_collection(process_no, self.dnx_config.multiprocessing_bt_current_inserts)
-
-        # print('self.all_bt_current_inserts_processes_done', self.all_bt_current_inserts_processes_done)
+            # print('self.all_bt_current_inserts_processes_done', self.all_bt_current_inserts_processes_done)
 
     def create_bt_indexes(self, bt_current_collection,bt_collection):
         print('start create indexes for', bt_current_collection)
@@ -447,6 +471,6 @@ class StartBt:
                                                                                               '_id': {'$in': mapping_be_source_ids}}).distinct('_id')
             # be_source_ids.sort()
             for source_id in be_source_ids:
-                self.etl_be(source_id, bt_current_collection,bt_collection, source_collection, process_no)
+                self.etl_be(source_id, bt_current_collection,bt_collection, source_collection, process_no, cpu_num_workers)
 
 
