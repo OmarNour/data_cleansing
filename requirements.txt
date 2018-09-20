@@ -1,5 +1,5 @@
 pymongo     ==3.7.1
-dask        ==0.19.1
-sqlAlchemy  ==1.2.11
+dask        ==0.19.2
+sqlAlchemy  ==1.2.12
 pandas      ==0.23.4
 numpy       ==1.15.1
