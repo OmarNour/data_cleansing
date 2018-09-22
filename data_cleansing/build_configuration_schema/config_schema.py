@@ -14,7 +14,7 @@ def get_data_from_db(url, schema, query):
 
 
 def get_dict_data(source_query):
-    url = 'sqlite:///D:/github/Python/Data_Cleansing/data_cleansing/dnx_config_db.db'
+    url = DNXConfig.Config.config_db_url
     schema = ''
     result_proxy = get_data_from_db(url, schema, source_query)
     query_result_data = result_proxy.fetchall()

@@ -5,6 +5,7 @@ import multiprocessing
 
 class Config:
     # config_file_path = 'D:/github/Python/Data_Cleansing/data_cleansing/dnx_config.xlsx'
+    config_db_url = 'sqlite:///C:/Users/Omar/PycharmProjects/data_cleansing/data_cleansing/dnx_config_db.db'
     mongo_uri = "mongodb://127.0.0.1:27017"
     # mongo_uri = "mongodb://192.168.3.108:27017" # waleed
     src_db_name = 'Source_data'

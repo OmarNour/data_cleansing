@@ -1,5 +1,5 @@
-import sys
-sys.path.append('D:\github\Python\data_cleansing_project')
+import sys, os
+sys.path.append("C:\\Users\\Omar\\PycharmProjects\\data_cleansing")
 import subprocess
 import multiprocessing
 from data_cleansing.build_configuration_schema.config_schema import build_config_db
@@ -15,6 +15,7 @@ if __name__ == '__main__':
     dnx_config = DNXConfig.Config()
     client = pymongo.MongoClient(dnx_config.mongo_uri)
     config_database = client[dnx_config.config_db_name]
+    module_path = os.path.dirname(sys.modules['__main__'].__file__)
 
     run_time = datetime.datetime.now()
     no_of_subprocess = int(config_database[dnx_config.parameters_collection].find_one({'_id': 'no_of_subprocess'})['value'])
@@ -36,7 +37,7 @@ if __name__ == '__main__':
         DQ = i['DQ']
         if BT == 1:
             loading_source_data = subprocess.Popen(['python',
-                                                    'D:/github/Python/data_cleansing_project/data_cleansing/load_source_data/load_source_data.py',
+                                                    module_path + '/load_source_data/load_source_data.py',
                                                     str(cpu_count)])
 
             while loading_source_data.poll() is None:
@@ -59,7 +60,7 @@ if __name__ == '__main__':
                                                                                dnx_config.multiprocessing_bt_current_deletes: 1,
                                                                                dnx_config.multiprocessing_process_alive: 1})
             bt_process_dict[process_no] = subprocess.Popen(['python',
-                                                            'D:/github/Python/data_cleansing_project/data_cleansing/run_engine.py',
+                                                            module_path + '/run_engine.py',
                                                             process_no,
                                                             str(BT),
                                                             str(DQ),

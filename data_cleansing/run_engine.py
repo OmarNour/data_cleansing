@@ -1,6 +1,5 @@
 import sys
-sys.path.append('D:\github\Python\data_cleansing_project')
-
+sys.path.append("C:\\Users\\Omar\\PycharmProjects\\data_cleansing")
 from data_cleansing.BT.BT import StartBt
 from data_cleansing.DQ.DQ import StartDQ
 
