@@ -13,6 +13,8 @@ from dask import delayed,compute
 from pymongo import IndexModel
 import os
 from dask.diagnostics import ProgressBar
+# import swifter
+
 # import dask.multiprocessing
 # dask.config.set(scheduler='processes')
 
@@ -67,7 +69,6 @@ class StartBt:
         df_melt_result.columns = ['RowKey', 'AttributeName', 'AttributeValue']
         df_melt_result['BTSID'] = 1
         df_melt_result['SourceID'] = source_id
-        # df_melt_result['RowKey'] = df_melt_result['RowKey'].apply(sha1)
         df_melt_result['new_row'] = 1
         df_melt_result['RefSID'] = None
         df_melt_result['HashValue'] = df_melt_result['AttributeValue'].apply(sha1)
@@ -90,6 +91,7 @@ class StartBt:
         att_ids_df = pd.DataFrame(data_sources_mapping_data_list)
         # print(att_ids_df)
         att_ids_df['ResetDQStage'] = att_ids_df.apply(lambda row: get_minimum_category(row['be_att_id']), axis=1)
+        # att_ids_df['ResetDQStage'] = att_ids_df.apply(lambda row: 1, axis=1)
         att_ids_df = att_ids_df.rename(index=str, columns={"query_column_name": "AttributeName", "be_att_id": "AttributeID"})
         # print(att_ids_df)
         return att_ids_df, len(att_ids_df)

@@ -7,12 +7,14 @@ from data_cleansing.dc_methods.dc_methods import insert_into_collection, df_to_d
 from dask import delayed,compute
 from pymongo import IndexModel
 from dask.diagnostics import ProgressBar
+# import swifter
 
 
 class StartDQ:
     parallel_upgrade_preparation = []
     dnx_config = None
     parameters_dict = None
+    cpu_num_workers = 1
 
     def get_data_value_pattern(self, att_value):
         try:
@@ -88,7 +90,7 @@ class StartDQ:
                     delayed_insert_result_df = delayed(self.insert_result_df)(result_df, g_result, result_collection, next_pass, next_fail,
                                                                               tmp_result_collection_name)
                     parallel_insert_result_df.append(delayed_insert_result_df)
-        compute(*parallel_insert_result_df)
+        compute(*parallel_insert_result_df, num_workers=self.cpu_num_workers)
 
     def get_next_be_att_id_category(self, be_att_id, current_category):
         client = pymongo.MongoClient(self.dnx_config.mongo_uri)
@@ -173,8 +175,8 @@ class StartDQ:
                                                                                                                    next_category_no,
                                                                                                                    bt_current_collection)
                 parallel_update_bt_current_collection.append(delayed_parallel_update_bt_current_collection)
-            compute(*parallel_update_bt_current_collection)
-            compute(*self.parallel_upgrade_preparation)
+            compute(*parallel_update_bt_current_collection, num_workers=self.cpu_num_workers)
+            compute(*self.parallel_upgrade_preparation, num_workers=self.cpu_num_workers)
 
     def upgrade_category(self, current_category):
         client = pymongo.MongoClient(self.dnx_config.mongo_uri)
@@ -189,9 +191,8 @@ class StartDQ:
             be_data_source_id = config_database[self.dnx_config.be_attributes_data_rules_collection].find_one({'_id': be_att_dr_id})['be_data_source_id']
             delayed_upgrade_rowkeys_category = delayed(self.upgrade_rowkeys_category)(be_att_id, current_category, be_data_source_id)
             parallel_upgrade_rowkeys_category.append(delayed_upgrade_rowkeys_category)
-        with ProgressBar():
-            print('upgrade from category', current_category)
-            compute(*parallel_upgrade_rowkeys_category)
+        print('upgrade from category', current_category)
+        compute(*parallel_upgrade_rowkeys_category, num_workers=self.cpu_num_workers)
 
     def execute_data_rules(self, data_rule, category_no):
         # data from self.dnx_config.be_attributes_data_rules_collection
@@ -232,10 +233,11 @@ class StartDQ:
         except:
             None
 
-    def start_dq(self):
+    def start_dq(self, cpu_num_workers):
         pd.set_option('mode.chained_assignment', None)
         self.dnx_config = DNXConfig.Config()
         self.parameters_dict = self.dnx_config.get_parameters_values()
+        self.cpu_num_workers = cpu_num_workers
 
         client = pymongo.MongoClient(self.dnx_config.mongo_uri)
         config_database = client[self.dnx_config.config_db_name]
@@ -255,8 +257,7 @@ class StartDQ:
             for data_rule in be_attributes_data_rules_data:
                 delayed_execute_data_rules = delayed(self.execute_data_rules)(data_rule, category_no)
                 parallel_execute_data_rules.append(delayed_execute_data_rules)
-            with ProgressBar():
-                print('Execute',len(parallel_execute_data_rules),'data rules in category', category_no)
-                compute(*parallel_execute_data_rules)
+            print('Execute',len(parallel_execute_data_rules),'data rules in category', category_no)
+            compute(*parallel_execute_data_rules, num_workers=self.cpu_num_workers)
             # print('---------------------------------------------------------------------------------------')
             self.upgrade_category(category_no)

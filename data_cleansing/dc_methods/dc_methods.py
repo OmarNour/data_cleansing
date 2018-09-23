@@ -116,11 +116,15 @@ def get_start_end_index(total_rows, chunk_size):
 def get_minimum_category(be_att_id):
     client = pymongo.MongoClient(DNXConfig.Config.mongo_uri)
     config_database = client[DNXConfig.Config.config_db_name]
+    # print('be_minimum_category')
     be_minimum_category = config_database[DNXConfig.Config.be_attributes_data_rules_collection].aggregate([{'$match': {'be_att_id': be_att_id}},
                                                                                                            {'$group': {'_id': '$be_att_id',
                                                                                                                        'min_cat': {
                                                                                                                            '$min': '$category_no'}}}])
+    # return 1
+    # print('be_minimum_category', be_minimum_category)
     for i in be_minimum_category:
+        # print('min_cat', int(i['min_cat']))
         return int(i['min_cat'])
     return 1
 

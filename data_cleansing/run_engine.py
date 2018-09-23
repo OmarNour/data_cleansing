@@ -32,5 +32,5 @@ if __name__ == '__main__':
     if DQ == 1:
         # DQ_time = datetime.datetime.now()
         start_dq = StartDQ()
-        start_dq.start_dq()
+        start_dq.start_dq(cpu_num_workers)
         # print('----------------     DQ_time:', datetime.datetime.now() - DQ_time, '      ----------------')
