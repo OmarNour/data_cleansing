@@ -28,7 +28,7 @@ def build_config_db():
     client = pymongo.MongoClient(DNXConfig.Config.mongo_uri)
     database = client[DNXConfig.Config.config_db_name]
 
-    table_names = ['parameters', 'organizations',
+    table_names = ['parameters', 'domains', 'organizations',
                    'org_connections', 'org_business_entities', 'org_attributes',
                    'be_attributes', 'be_data_sources', 'be_data_sources_mapping',
                    'be_attributes_data_rules', 'be_attributes_data_rules_lvls',
